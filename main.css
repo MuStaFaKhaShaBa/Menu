@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #10131c;
+    height: 100vh;
+}
+ul {
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    background-color: #212532;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+    
+}
+ul.active {
+    width: 200px;
+    height: 200px;
+    transition-delay: 0s;
+}
+ul li {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s, width 0.5s, height 0.5s, background-color 0.5s;
+    transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+    transition-delay: calc(0.1s * var(--i));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li ion-icon {
+    font-size: 0em;
+    transition: 0.3s;
+}
+ul.active li {
+    transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+    background-color: #333849;
+    width: 45px;
+    height: 45px;
+}
+ul.active li ion-icon {
+    font-size: 1.35em;
+    color: white;
+}
+ul.active li:hover ion-icon {
+    color: #2dfc52;
+    filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52);
+}
